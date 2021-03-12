@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <com.view.circulartimerview.CircularTimerView
+        android:id="@+id/progress_circular"
+        android:layout_width="337dp"
+        android:layout_height="317dp"
+        android:layout_marginTop="4dp"
+        app:backgroundColor="#e76130"
+        app:backgroundWidth="8"
+        app:isClockwise="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:maxValue="100"
+        app:prefix="Time Left "
+        app:progressBackgroundColor="#eee"
+        app:progressColor="#000"
+        app:progressText=""
+        app:progressTextColor="#eee"
+        app:startingPoint="bottom"
+        app:suffix=""
+        app:textSize="18sp" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="279dp"
+        android:layout_height="129dp"
+        android:divider="@android:drawable/divider_horizontal_bright"
+        android:dividerPadding="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/progress_circular">
+
+        <Button
+            android:id="@+id/start_pause_button"
+            android:layout_width="131dp"
+            android:layout_height="128dp"
+            android:onClick="startTimer"
+            android:text="start"
+            android:textColor="#000000"
+            app:backgroundTint="#e76130"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconTint="#673AB7" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="131dp"
+            android:layout_height="128dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:onClick="stopTimer"
+            android:text="stop"
+            android:textColor="#000000"
+            app:backgroundTint="#e76130"
+            app:icon="@android:drawable/checkbox_off_background"
+            app:iconTint="#673AB7" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="278dp"
+        android:layout_height="194dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            android:id="@+id/text_1"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:rotation="90"
+            android:text="STUDY" />
+
+        <LinearLayout
+            android:layout_width="84dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/study_up"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:onClick="incStudy"
+                app:srcCompat="@android:drawable/dialog_holo_dark_frame" />
+
+            <TextView
+                android:id="@+id/study_text"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:text="25"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:id="@+id/Study_down"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:onClick="decStudy"
+                app:srcCompat="@android:drawable/dialog_holo_dark_frame" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="82dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/break_up"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:onClick="incBreak"
+                app:srcCompat="@android:drawable/dialog_holo_dark_frame" />
+
+            <TextView
+                android:id="@+id/break_text"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:gravity="center"
+                android:text="5"
+                android:textSize="30dp" />
+
+            <ImageView
+                android:id="@+id/Break_down"
+                android:layout_width="match_parent"
+                android:layout_height="62dp"
+                android:onClick="decBreak"
+                app:srcCompat="@android:drawable/dialog_holo_dark_frame" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_2"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:rotation="-90"
+            android:text="BREAK" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
