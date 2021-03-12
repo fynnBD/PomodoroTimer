@@ -42,7 +42,11 @@ import com.view.circulartimerview.CircularTimerView
         (currentCountdown as PomodoroClockTimer).start()
     }
 
-    fun stopTimer(view: View)
+      /**
+       * Stops the clock and returns the circle visual
+       * to a neutral state
+       */
+      fun stopTimer(view: View)
     {
         currentCountdown?.cancel()
         val progBar = findViewById<CircularTimerView>(R.id.progress_circular)
@@ -52,6 +56,10 @@ import com.view.circulartimerview.CircularTimerView
 
     }
 
+      /**
+       * called at the transition between break and study states,
+       * changes max value, color and text to the correct values
+       */
     fun setToStudy()
     {
         var progbar = findViewById<CircularTimerView>(R.id.progress_circular)
@@ -68,6 +76,10 @@ import com.view.circulartimerview.CircularTimerView
         }
     }
 
+      /**
+       * does the same thing as setToStudy, except changes between study and break
+       * states
+       */
     fun setToBreak()
     {
         var progbar = findViewById<CircularTimerView>(R.id.progress_circular)
@@ -84,6 +96,10 @@ import com.view.circulartimerview.CircularTimerView
         }
     }
 
+      /**
+       * These four methods are used by each increase/decrease
+       * arrow to adjust the length of the break and study periods
+        */
     fun incStudy(view: View)
     {
         var studyCount = findViewById<ImageView>(R.id.study_up)
